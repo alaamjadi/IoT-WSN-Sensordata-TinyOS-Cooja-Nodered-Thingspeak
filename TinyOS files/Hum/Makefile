@@ -1,0 +1,2 @@
+COMPONENT=MaghAppC
+include $(MAKERULES)

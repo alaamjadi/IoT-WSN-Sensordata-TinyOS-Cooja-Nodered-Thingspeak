@@ -1,0 +1,2 @@
+COMPONENT=MagtAppC
+include $(MAKERULES)
