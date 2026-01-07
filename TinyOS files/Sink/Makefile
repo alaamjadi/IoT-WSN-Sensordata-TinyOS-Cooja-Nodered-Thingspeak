@@ -1,2 +1,0 @@
-COMPONENT=MagsAppC
-include $(MAKERULES)
