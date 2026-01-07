@@ -1,0 +1,76 @@
+############################
+# OS / Editor junk
+############################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+.vscode/
+.idea/
+
+############################
+# Node-RED / Node.js
+############################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.flow.json.backup
+
+############################
+# Node-RED runtime files
+############################
+sensorlog.txt
+*.log
+
+############################
+# TinyOS build artifacts
+############################
+build/
+*.exe
+*.out
+*.elf
+*.hex
+*.map
+*.o
+*.a
+*.dep
+
+############################
+# TinyOS / nesC intermediate files
+############################
+*.nc.bak
+*.c.bak
+*.nesc
+
+############################
+# Cooja / Simulation generated files
+############################
+*.csc.tmp
+*.log
+cooja.log
+COOJA.testlog
+
+############################
+# MSP430 / toolchain leftovers
+############################
+*.lst
+*.sym
+
+############################
+# Temporary / local paths
+############################
+/home/user/PROJECT/
+.env
+.env.*
+
+############################
+# Archives
+############################
+*.zip
+*.tar
+*.tar.gz
