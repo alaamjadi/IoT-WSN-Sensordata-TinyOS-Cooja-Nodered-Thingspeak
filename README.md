@@ -1,4 +1,4 @@
-# TinyOS WSN → Node-RED → ThingSpeak (Dual-Channel) — Cooja Simulation
+# IoT WSN → TinyOS → Cooja Simulation → Node-RED → ThingSpeak (Dual-Channel)
 
 This repository is an end-to-end IoT / WSN demo showing how to:
 
