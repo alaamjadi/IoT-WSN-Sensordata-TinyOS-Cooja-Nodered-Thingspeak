@@ -1,4 +1,4 @@
-# IoT WSN → TinyOS → Cooja Simulation → Node-RED → ThingSpeak (Dual-Channel)
+# TinyOS WSN → Node-RED → ThingSpeak (Dual-Channel) — Cooja Simulation
 
 This repository is an end-to-end IoT / WSN demo showing how to:
 
@@ -11,13 +11,16 @@ This repository is an end-to-end IoT / WSN demo showing how to:
 ## Architecture
 
 ```
-Channel 01 (Cluster 01)                         Channel 02 (Cluster 02)
-[Temp-1] \                                      [Temp-2] \
-         \ (AM RADIO_MSG=6)                               \ (AM RADIO_MSG=6)
-[Hum-1]  --> [Sink-1] --SerialSocket--> TCP :60003   [Hum-2] --> [Sink-2] --SerialSocket--> TCP :60004
-                              |                                      |
-                              v                                      v
-                         [Node-RED Flow] ---------------------> ThingSpeak Channel 01 & 02
+<Channel 01 - Cluster 01>                                                                        <Channel 02 - Cluster 02>
+[Temp-1] \                                                                                                / [Temp-2]
+          \ (AM RADIO_MSG=6)                                                           (AM RADIO_MSG=6)  /
+           \                                                                                            /
+[Hum-1]  ---> [Sink-1] --SerialSocket--> TCP :60003                          TCP :60004 <--- [Sink-2] <--SerialSocket-- [Hum-2]
+                                          |                                      |
+                                          v                 TCP IN               v
+                                      |-----------------------------------------------|
+                                      |                [Node-RED Flow] ---------------|------> ThingSpeak Channel 01 & 02
+                                      |_______________________________________________|
 ```
 
 > In this implementation, **each cluster has its own Sink mote** and its own Serial Socket TCP port.  
@@ -30,7 +33,7 @@ Channel 01 (Cluster 01)                         Channel 02 (Cluster 02)
   - `Hum/` Humidity mote application
   - `Sink/` Sink mote application
   - `Makefile` Build orchestrator (build all apps at once)
-- `Node-RED/noderedflows` Node-RED flow export (JSON)
+- `Node-RED/flows.json` Node-RED flow export
 - `cooja/` Cooja simulation configuration (`*.csc`)
 - `screenshots/` screenshots used in this README
 
